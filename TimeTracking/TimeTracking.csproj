@@ -1,0 +1,376 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9B08F688-74E1-4F86-B2DA-5279FCD2BB6A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>TimeTracking</RootNamespace>
+    <AssemblyName>TimeTracking</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>\\192.168.0.2\ko\Оборудование\Базы\TimeTracking\Client\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Unc</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>37</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>854CEF103959E81D722683F0CB4F164AF1F22A30</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>TimeTracking_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>C:\Windows\assembly\GAC_MSIL\Microsoft.Office.Interop.Excel\15.0.0.0__71e9bce111e9429c\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdditionalRecordsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdditionalRecordsForm.Designer.cs">
+      <DependentUpon>AdditionalRecordsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataGridViewCustomComboBoxColumn.cs" />
+    <Compile Include="DictionaryForms\DictionaryEmployeePosition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DictionaryForms\DictionaryEmployeePosition.Designer.cs">
+      <DependentUpon>DictionaryEmployeePosition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DictionaryForms\DictionaryIdleReasonsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DictionaryForms\DictionaryIdleReasonsForm.Designer.cs">
+      <DependentUpon>DictionaryIdleReasonsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DictionaryForms\DictionaryMalfunctionCauses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DictionaryForms\DictionaryMalfunctionCauses.Designer.cs">
+      <DependentUpon>DictionaryMalfunctionCauses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DictionaryForms\DictionaryPlainList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DictionaryForms\DictionaryPlainList.Designer.cs">
+      <DependentUpon>DictionaryPlainList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DictionaryForms\DictionaryShiftStaffUserEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DictionaryForms\DictionaryShiftStaffUserEdit.Designer.cs">
+      <DependentUpon>DictionaryShiftStaffUserEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DictionaryForms\DictionaryUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DictionaryForms\DictionaryUsers.Designer.cs">
+      <DependentUpon>DictionaryUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DictionaryForms\IDictionaryPrepare.cs" />
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewDateTimePicker.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Prompt.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DictionaryForms\DictionaryMaintananceServiceStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DictionaryForms\DictionaryMaintananceServiceStaff.Designer.cs">
+      <DependentUpon>DictionaryMaintananceServiceStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DictionaryForms\DictionaryShiftStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DictionaryForms\DictionaryShiftStaff.Designer.cs">
+      <DependentUpon>DictionaryShiftStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\LaborCostReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\LaborCostReportForm.Designer.cs">
+      <DependentUpon>LaborCostReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ShiftEffectivenessPeriodForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ShiftEffectivenessPeriodForm.Designer.cs">
+      <DependentUpon>ShiftEffectivenessPeriodForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\UsingTimeReportData.cs" />
+    <Compile Include="ShiftsForms\EquipmentBlockingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShiftsForms\EquipmentBlockingForm.Designer.cs">
+      <DependentUpon>EquipmentBlockingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShiftsForms\ShiftsNotesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShiftsForms\ShiftsNotesForm.Designer.cs">
+      <DependentUpon>ShiftsNotesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShiftsForms\ShiftsDowntimeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShiftsForms\ShiftsDowntimeForm.Designer.cs">
+      <DependentUpon>ShiftsDowntimeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ShiftsReportDowntimeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ShiftsReportDowntimeForm.Designer.cs">
+      <DependentUpon>ShiftsReportDowntimeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\StaffTimeTrackingReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\StaffTimeTrackingReport.Designer.cs">
+      <DependentUpon>StaffTimeTrackingReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShiftsForms\StaffTimeTrackingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShiftsForms\StaffTimeTrackingForm.Designer.cs">
+      <DependentUpon>StaffTimeTrackingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TimePeriod.cs" />
+    <Compile Include="TimeTrackingDataForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools.cs" />
+    <Compile Include="UserControls\MessageRecordControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\MessageRecordControl.Designer.cs">
+      <DependentUpon>MessageRecordControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MessageRecordListControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\MessageRecordListControl.Designer.cs">
+      <DependentUpon>MessageRecordListControl.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AdditionalRecordsForm.resx">
+      <DependentUpon>AdditionalRecordsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DictionaryForms\DictionaryEmployeePosition.resx">
+      <DependentUpon>DictionaryEmployeePosition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DictionaryForms\DictionaryIdleReasonsForm.resx">
+      <DependentUpon>DictionaryIdleReasonsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DictionaryForms\DictionaryMalfunctionCauses.resx">
+      <DependentUpon>DictionaryMalfunctionCauses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DictionaryForms\DictionaryPlainList.resx">
+      <DependentUpon>DictionaryPlainList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DictionaryForms\DictionaryShiftStaffUserEdit.resx">
+      <DependentUpon>DictionaryShiftStaffUserEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DictionaryForms\DictionaryUsers.resx">
+      <DependentUpon>DictionaryUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="DictionaryForms\DictionaryMaintananceServiceStaff.resx">
+      <DependentUpon>DictionaryMaintananceServiceStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DictionaryForms\DictionaryShiftStaff.resx">
+      <DependentUpon>DictionaryShiftStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\LaborCostReportForm.resx">
+      <DependentUpon>LaborCostReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ShiftEffectivenessPeriodForm.resx">
+      <DependentUpon>ShiftEffectivenessPeriodForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShiftsForms\EquipmentBlockingForm.resx">
+      <DependentUpon>EquipmentBlockingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShiftsForms\ShiftsNotesForm.resx">
+      <DependentUpon>ShiftsNotesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShiftsForms\ShiftsDowntimeForm.resx">
+      <DependentUpon>ShiftsDowntimeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ShiftsReportDowntimeForm.resx">
+      <DependentUpon>ShiftsReportDowntimeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\StaffTimeTrackingReport.resx">
+      <DependentUpon>StaffTimeTrackingReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShiftsForms\StaffTimeTrackingForm.resx">
+      <DependentUpon>StaffTimeTrackingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\MessageRecordControl.resx">
+      <DependentUpon>MessageRecordControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\MessageRecordListControl.resx">
+      <DependentUpon>MessageRecordListControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="TimeTracking_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TimeTrackingDB\TimeTrackingDB.csproj">
+      <Project>{f92a07da-81d4-4113-8bf0-aeb9e3a2341e}</Project>
+      <Name>TimeTrackingDB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TimeTrackingLib\TimeTrackingLib.csproj">
+      <Project>{d9d2afc1-a134-4c0f-98da-7da0a897e5c6}</Project>
+      <Name>TimeTrackingLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TimeTrackingSAP\TimeTrackingSAP.csproj">
+      <Project>{12dd4a98-c7ad-43e6-a92d-a8cceb7ae138}</Project>
+      <Name>TimeTrackingSAP</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\34218_add_cross_delete_exit_remove_icon.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Данный проект ссылается на пакеты NuGet, отсутствующие на этом компьютере. Используйте восстановление пакетов NuGet, чтобы скачать их.  Дополнительную информацию см. по адресу: http://go.microsoft.com/fwlink/?LinkID=322105. Отсутствует следующий файл: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>
