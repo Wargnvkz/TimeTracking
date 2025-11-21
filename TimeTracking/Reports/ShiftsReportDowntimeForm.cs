@@ -187,7 +187,7 @@ namespace TimeTracking.Reports
                     workSheet.Cells[row, "B"] = idle.IsNightShift ? "Н" : "Д";
                     workSheet.Cells[row, "C"] = Shift.GetShiftNumber(idle.ShiftStart.Value, idle.IsNightShift); ;
                     workSheet.Cells[row, "D"] = idle.IdleStart.HasValue ? idle.IdleStart.Value.ToString("HH\\:mm") : "";
-                    workSheet.Cells[row, "E"] = idle.IdleEnd.HasValue ? (idle.IdleDuration.TotalHours<=12?idle.IdleEnd.Value.ToString("HH\\:mm"):idle.IdleEnd.Value.ToString("dd.MM.yyyy HH\\:mm")) : "";
+                    workSheet.Cells[row, "E"] = idle.IdleEnd.HasValue ? (idle.IdleDuration.TotalHours <= 12 ? idle.IdleEnd.Value.ToString("HH\\:mm") : idle.IdleEnd.Value.ToString("dd.MM.yyyy HH\\:mm")) : "";
                     workSheet.Cells[row, "F"] = idle.IdleStart.HasValue && idle.IdleEnd.HasValue ? $"{(int)idle.IdleDuration.TotalHours}:{(int)idle.IdleDuration.Minutes:D2}" : "";// "Прост.";
                     workSheet.Cells[row, "G"] = idle.MalfunctionReasonTypeID.HasValue && reasonTypes.ContainsKey(idle.MalfunctionReasonTypeID.Value) ? reasonTypes[idle.MalfunctionReasonTypeID.Value].MalfunctionReasonTypeName : "";// "Вид";
                     workSheet.Cells[row, "H"] = idle.MalfunctionReasonProfileID.HasValue && profiles.ContainsKey(idle.MalfunctionReasonProfileID.Value) ? profiles[idle.MalfunctionReasonProfileID.Value].MalfunctionReasonProfileName : ""; //"Профиль";
@@ -454,7 +454,7 @@ namespace TimeTracking.Reports
                         workSheet.Cells[row, "C"] = Shift.GetShiftNumber(shift.Key.ShiftStart.Value, shift.Key.IsNightShift);
                         workSheet.Cells[row, "D"] = idle.IdleStart.HasValue ? idle.IdleStart.Value.ToString("HH\\:mm") : "";
                         workSheet.Cells[row, "E"] = idle.IdleEnd.HasValue ? idle.IdleEnd.Value.ToString("HH\\:mm") : "";
-                        workSheet.Cells[row, "F"] = idle.IdleStart.HasValue && idle.IdleEnd.HasValue ? (idle.IdleEnd.Value - idle.IdleStart.Value).ToString("hh\\:mm") : "";// "Прост.";
+                        workSheet.Cells[row, "F"] = idle.IdleStart.HasValue && idle.IdleEnd.HasValue ? $"{(int)idle.IdleDuration.TotalHours}:{(int)idle.IdleDuration.Minutes:D2}" : "";// "Прост.";
                         workSheet.Cells[row, "G"] = idle.MalfunctionReasonTypeID.HasValue && reasonTypes.ContainsKey(idle.MalfunctionReasonTypeID.Value) ? reasonTypes[idle.MalfunctionReasonTypeID.Value].MalfunctionReasonTypeName : "";// "Вид";
                         workSheet.Cells[row, "H"] = idle.MalfunctionReasonProfileID.HasValue && profiles.ContainsKey(idle.MalfunctionReasonProfileID.Value) ? profiles[idle.MalfunctionReasonProfileID.Value].MalfunctionReasonProfileName : ""; //"Профиль";
                         workSheet.Cells[row, "I"] = idle.MalfunctionReasonNodeID.HasValue && nodes.ContainsKey(idle.MalfunctionReasonNodeID.Value) ? nodes[idle.MalfunctionReasonNodeID.Value].MalfunctionReasonNodeName : "";// "Узел";
